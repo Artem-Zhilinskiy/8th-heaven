@@ -29,11 +29,16 @@ namespace EightHeaven
         public void NextDay()
         {
             Debug.Log("Next day is triggered");
-            AnnulateActions();
-            AddActions(actionsPerDay);
+            RenewActions();
             dayNumber++;
             currentDayLabel.text = dayNumber.ToString();
             actionLabel.text = actions.ToString();
+        }
+
+        private void RenewActions()
+        {
+            AnnulateActions();
+            AddActions(actionsPerDay);
         }
 
         private void AnnulateActions()
