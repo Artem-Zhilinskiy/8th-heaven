@@ -1195,20 +1195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionLabel: {fileID: 934623229}
   currentDayLabel: {fileID: 1904845884}
-  PrincessChambersButton: {fileID: 1796395591}
-  NobleQuarterButton: {fileID: 1723761320}
-  CouncilButton: {fileID: 974309813}
-  ShopButton: {fileID: 428432205}
-  SmithButton: {fileID: 726065688}
-  AlchemistButton: {fileID: 1378065142}
-  LibaryButton: {fileID: 2007845043}
-  BrothelButton: {fileID: 35098899}
-  TownWalkButton: {fileID: 1537797397}
-  MadamHouseButton: {fileID: 1239695027}
-  FortButton: {fileID: 1293315026}
-  ForestButton: {fileID: 748190283}
-  FarmsButton: {fileID: 3090605}
-  CampButton: {fileID: 1449345502}
 --- !u!4 &292888829
 Transform:
   m_ObjectHideFlags: 0
@@ -2767,7 +2753,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 748190284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 292888828}
+        m_TargetAssemblyTypeName: EightHeaven.GameManager, Assembly-CSharp
+        m_MethodName: AnyLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 748190283}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &748190284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5328,7 +5326,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1293315027}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 292888828}
+        m_TargetAssemblyTypeName: EightHeaven.GameManager, Assembly-CSharp
+        m_MethodName: AnyLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1293315026}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1293315027
 MonoBehaviour:
   m_ObjectHideFlags: 0

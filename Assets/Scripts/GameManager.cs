@@ -75,6 +75,34 @@ namespace EightHeaven
             RenewHint();
         }
 
+        /*
+         * любая кнопка локации
+         * 1. Проверка на то, является ли сейчас локация квестовой.
+         * 1.1. Если да, то активировать панель, соотвтствующей стадии квеста (Так же через массив, как и локации). 
+         * Отключается основная панель. Вызывается ProgressStage.
+         * 2. Если нет, то пройти проверку на второстепенный квест.
+         * 3. Если обе проверки показали, что в локации квеста нет, то разыгрывается случайной событие.
+         */
+
+        private bool CheckMainQuestLoc(Button button)
+        {
+            if (button == questLocations[stage]) return true;
+            else return false;
+
+        }
+
+        public void AnyLocation(Button button)
+        {
+            if (CheckMainQuestLoc(button))
+            {
+                Debug.Log("This is main quest Location. Stage is " + stage.ToString());
+            }
+            else
+            {
+                Debug.Log("This location does not have main quest currently");
+            }
+        }
+
         private void RenewHint()
         {
 
