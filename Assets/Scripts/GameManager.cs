@@ -65,7 +65,7 @@ namespace EightHeaven
 
         #region MainQuest
         private int stage = 0; //Stage of the main quest.
-        private Button[] questLocations = new Button[] { FortButton, ForestButton }; //Location of the current quest stage.
+        private string[] questLocations = new string[] { "FortButton", "ForestButton" }; //Location of the current quest stage.
                                                   //TODO: create massives for questlocations and hints. Element number will be stage number.
         private string hint; //Hint of the current quest stage.
 
@@ -86,7 +86,7 @@ namespace EightHeaven
 
         private bool CheckMainQuestLoc(Button button)
         {
-            if (button == questLocations[stage]) return true;
+            if (button.name == questLocations[stage]) return true;
             else return false;
 
         }
