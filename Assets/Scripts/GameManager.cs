@@ -38,29 +38,29 @@ namespace EightHeaven
 
         [Header("City buttons")]
         [SerializeField]
-        private static Button ShopButton;
+        private  Button ShopButton;
         [SerializeField]
-        private static Button SmithButton;
+        private  Button SmithButton;
         [SerializeField]
-        private static Button AlchemistButton;
+        private  Button AlchemistButton;
         [SerializeField]
-        private static Button LibaryButton;
+        private  Button LibaryButton;
         [SerializeField]
-        private static Button BrothelButton;
+        private  Button BrothelButton;
         [SerializeField]
-        private static Button TownWalkButton;
+        private  Button TownWalkButton;
         [SerializeField]
-        private static Button MadamHouseButton;
+        private  Button MadamHouseButton;
 
         [Header("Suburb buttons")]
         [SerializeField]
-        private static Button FortButton;
+        private  Button FortButton;
         [SerializeField]
-        private static Button ForestButton;
+        private  Button ForestButton;
         [SerializeField]
-        private static Button FarmsButton;
+        private  Button FarmsButton;
         [SerializeField]
-        private static Button CampButton;
+        private  Button CampButton;
         #endregion
 
         #region MainQuest
@@ -88,7 +88,6 @@ namespace EightHeaven
         {
             if (button.name == questLocations[stage]) return true;
             else return false;
-
         }
 
         public void AnyLocation(Button button)
@@ -96,6 +95,7 @@ namespace EightHeaven
             if (CheckMainQuestLoc(button))
             {
                 Debug.Log("This is main quest Location. Stage is " + stage.ToString());
+                OpenQuestPanel(FindMainQuestPanel(stage));
             }
             else
             {
@@ -107,6 +107,39 @@ namespace EightHeaven
         {
 
         }
+        #endregion
+
+        #region PanelManagement
+        [Header("Panels")]
+        [SerializeField]
+        private GameObject MainPanel;
+        [SerializeField]
+        private GameObject MainQuestPanel00;
+
+        private string[] questPanels = new string[] {"MainQuestPanel00" };
+
+        public void OpenQuestPanel(GameObject panel)
+        {
+            MainPanel.SetActive(false);
+            panel.SetActive(true);
+        }
+
+        public void ReturnToMainPanel()
+        {
+            MainQuestPanel00.SetActive(false);
+            MainPanel.SetActive(true);
+        }
+
+        private GameObject FindMainQuestPanel(int stage)
+        {
+            switch (stage)
+            { 
+                case 0:
+                    return MainQuestPanel00;
+                default: return null;
+            }
+        }
+
         #endregion
 
         public void NextDay()
