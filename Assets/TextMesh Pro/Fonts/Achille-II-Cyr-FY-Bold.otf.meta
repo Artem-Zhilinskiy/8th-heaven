@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: edb680b95dabfe948a5fc976469f477f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - AchilleIICyrFY-Bold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d908161d95f31eb4b84cb7efa44c5610, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

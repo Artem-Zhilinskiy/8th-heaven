@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 68922637623c4584aadcc45e56d57151
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - AchilleIICyrFY-Medium
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 64905298b72bf9b4ba585cabc4c8c92f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
