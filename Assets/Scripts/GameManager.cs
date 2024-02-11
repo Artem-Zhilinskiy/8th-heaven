@@ -30,11 +30,11 @@ namespace EightHeaven
         #region buttons
         [Header ("Noble quarters buttons")]
         [SerializeField]
-        private static Button PrincessChambersButton;
+        private  Button PrincessChambersButton;
         [SerializeField]
-        private static Button NobleQuartersButton;
+        private  Button NobleQuartersButton;
         [SerializeField]
-        private static Button CouncilButton;
+        private  Button CouncilButton;
 
         [Header("City buttons")]
         [SerializeField]
@@ -65,14 +65,15 @@ namespace EightHeaven
 
         #region MainQuest
         private int stage = 0; //Stage of the main quest.
-        private string[] questLocations = new string[] { "FortButton", "ForestButton" }; //Location of the current quest stage.
+        private string[] questLocations = new string[] { "FortButton", "FortButton", "ForestButton" }; //Location of the current quest stage.
                                                   //TODO: create massives for questlocations and hints. Element number will be stage number.
         private string hint; //Hint of the current quest stage.
 
         public void ProgressStage()
         {
             stage++;
-            RenewHint();
+            //RenewHint();
+            Debug.Log("stage of main quest is " + stage.ToString());
         }
 
         /*
@@ -115,8 +116,17 @@ namespace EightHeaven
         private GameObject MainPanel;
         [SerializeField]
         private GameObject MainQuestPanel00;
+        [SerializeField]
+        private GameObject MainQuestPanel01;
+        [SerializeField]
+        private GameObject MainQuestPanel02;
+        [SerializeField]
+        private GameObject MainQuestPanel02_2;
 
-        private string[] questPanels = new string[] {"MainQuestPanel00" };
+        public void TurnOffButton(Button button)
+        {
+            button.interactable = false;
+        }
 
         public void OpenQuestPanel(GameObject panel)
         {
@@ -124,10 +134,16 @@ namespace EightHeaven
             panel.SetActive(true);
         }
 
-        public void ReturnToMainPanel()
+        public void ReturnToMainPanel(GameObject panel)
         {
-            MainQuestPanel00.SetActive(false);
+            panel.SetActive(false);
             MainPanel.SetActive(true);
+        }
+
+        public void AdvanceQuestPanel(GameObject panelToClose, GameObject panelToOpen)
+        {
+            panelToClose.SetActive(false);
+            panelToOpen.SetActive(true);
         }
 
         private GameObject FindMainQuestPanel(int stage)
@@ -136,6 +152,10 @@ namespace EightHeaven
             { 
                 case 0:
                     return MainQuestPanel00;
+                case 1:
+                    return MainQuestPanel01;
+                case 2:
+                    return MainQuestPanel02;
                 default: return null;
             }
         }
@@ -146,6 +166,7 @@ namespace EightHeaven
         {
             Debug.Log("Next day is triggered");
             RenewActions();
+            RenewButtons();
             dayNumber++;
             currentDayLabel.text = dayNumber.ToString();
             actionLabel.text = actions.ToString();
@@ -166,5 +187,23 @@ namespace EightHeaven
         {
             actions += actionsToAdd;
         }
+
+        private void RenewButtons()
+        {
+            PrincessChambersButton.interactable = true;
+            NobleQuartersButton.interactable = true;
+            CouncilButton.interactable = true;
+            ShopButton.interactable = true;
+            SmithButton.interactable = true;
+            AlchemistButton.interactable = true;
+            LibaryButton.interactable = true;
+            BrothelButton.interactable = true;
+            TownWalkButton.interactable = true;
+            MadamHouseButton.interactable = true;
+            FortButton.interactable = true;
+            ForestButton.interactable = true;
+            FarmsButton.interactable = true;
+            CampButton.interactable = true;
+    }
     }
 }
