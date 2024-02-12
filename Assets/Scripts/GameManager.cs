@@ -140,10 +140,14 @@ namespace EightHeaven
             MainPanel.SetActive(true);
         }
 
-        public void AdvanceQuestPanel(GameObject panelToClose, GameObject panelToOpen)
+        public void TurnOffPanel(GameObject panel)
         {
-            panelToClose.SetActive(false);
-            panelToOpen.SetActive(true);
+            panel.SetActive(false);
+        }
+
+        public void TurnOnPanel(GameObject panel)
+        {
+            panel.SetActive(true);
         }
 
         private GameObject FindMainQuestPanel(int stage)
